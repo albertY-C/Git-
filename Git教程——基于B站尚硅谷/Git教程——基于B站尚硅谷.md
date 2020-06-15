@@ -66,19 +66,145 @@
 
 * **版本管理**
 
+  利用HEAD指针还原历史版本，一个历史版本的生成分为以下几步：
+
+  工作区	——>	暂存区	——>	本地库
+
+  工作区：即为Git管理下所编辑的文档、代码等用户直接操作的文件；
+
+  暂存区：即为`git add . `命令后，文件所发生的改变；
+
+  本地库：即为`git commit -m "MESSAGE"`命令后，文件所提交到的地方；
+
   > 命令：
   >
-  > * `git status`
+  > * 文件添加操作
   >
-  >   查看当前文件修改的信息，红色代表修改文件，绿色代表还未添加到缓存；
+  >   * `git status`
   >
-  > * `git add`
+  >     查看工作区、暂存区[^1]的状态；
   >
-  >   将修改过后的文件添加到缓存，进入待提交状态，此时的文件显示绿色；
+  >   * `git add .`
   >
-  > * `git commit -m 'message'`
+  >     将工作区的新建/修改添加到暂存区，进入待提交状态，此时的文件显示绿色；
   >
-  >   提交当前缓存的文件；
+  >   * `git commit -m 'message'`
+  >
+  >     提交当前缓存的文件；
+  >
+  > * 文件删除
+  >
+  >   * git status
+  >
+  > * 版本控制操作
+  >
+  >   每一次提交都会有个版本，并且附带提交的信息；
+  >
+  >   ![image-20200615103649261](D:\Software\MarkDown\workspace\Git使用方法\attachment\pic\image-20200615103649261.png)
+  >
+  >   * 版本显示
+  >
+  >     `git log`/`git log --online`/`git reflog`(多屏显示：`b`向上翻页、`space`向下翻页、`q`退出)
+  >
+  >     查看提交的信息，包括：版本号(哈希算法)、作者、提交的时间、附加的信息；
+  >
+  >     ![image-20200615103916878](D:\Software\MarkDown\workspace\Git使用方法\attachment\pic\image-20200615103916878.png)
+  >
+  >   * 基于索引值操作[推荐]
+  >
+  >     利用版本号恢复相对应的版本内容，类似于指针索引；
+  >
+  >     > `git reset --hard [版本号]`(版本号可以使用头部标识的版本)
+  >     >
+  >     > 在本地库移动HEAD指针,重置暂存区,重置工作区;
+  >     >
+  >     > SPECIFICATION: *Resets the index(暂存区) and working tree(工作区). Any changes to tracked files in the working tree since `<commit>` are discarded.*
+  >     >
+  >     > 例：`git reset --hard 1957e04`
+  >     >
+  >     > ---
+  >     >
+  >     > `git reset --soft[版本号]`
+  >     >
+  >     > 仅在本地库移动HEAD指针，通俗的理解即为将文件操作恢复到`add`之前;
+  >     >
+  >     > SPECIFICATION: *Does not touch the index file or the working tree at all (but resets the head to `<commit>`, just like all modes do). This leaves all your changed files "Changes to be* committed", as `git status` would put it.
+  >     >
+  >     > ---
+  >     >
+  >     > `git reset --mixed[版本号]`
+  >     >
+  >     > 在本地库移动HEAD指针,重置暂存区，通俗的理解即为将文件内容恢复到`commit`之前;
+  >     >
+  >     > SPECIFICATION: *Resets the index but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the default action.*
+  >     
+  >   * 
 
 * **分支管理**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[^1]:暂存区的作用在于可以撤销修改过的文件，`git add`命令操作的文件会存放到暂存区，`git commit`命令操作的文件会直接存放到工作区；
 
