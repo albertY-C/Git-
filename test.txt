@@ -1,1 +1,7 @@
 how to use GIT
+this is master
+
+
+
+
+
