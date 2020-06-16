@@ -193,21 +193,39 @@
 
 > 命令:
 >
-> * `git remote -v`
+> * 查看本地库与远程连接
 >
->   查看本地库与远程连接；
+>   `git remote -v`
 >
 >   ![image-20200616215638220](D:\Software\MarkDown\workspace\Git使用方法\attachment\pic\image-20200616215638220.png)
 >
-> * `git remote add [别名] [连接名称]`
+> * 修改远程库别名
 >
->   例如：` git remote add GitNotes https://github.com/albertY-C/Git-.git`;
+>   `git remote add [别名] [连接名称]`
 >
-> * `git push [连接别名] [分支名称]` 
+>   例如：` git remote add GitNotes(别名) https://github.com/albertY-C/Git-.git`;
 >
->   例如：
+> * 以HTTPS的方式将本地库的文档**PUSH**到远程库中
 >
->   将本地库的文档推送到远程库中；
+>   `git push [连接别名] [分支名称]` 
+>
+>   例如：` git push GitNotes master`;
+>
+> * **CLONE**
+>
+>   `git clone [链接]`
+>
+>   例如：`git clone https://github.com/albertY-C/Git-.git`
+>
+>   注意CLONE的时候要区分本地库的地址，此时会完整地把远程库下载到本地库中，创建一个GitNotes远程地址的别名，初始化本地库；
+>
+> * 拉取
+>
+>   `pull = fetch + merge`;
+>
+>   `git fetch [远程库地址别名] [远程分支名]`
+>
+>   `git merge [远程库地址别名/远程分支名]`
 
 
 
