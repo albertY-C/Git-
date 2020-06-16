@@ -138,9 +138,51 @@
   >     >
   >     > SPECIFICATION: *Resets the index but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the default action.*
   >     
-  >   * 
+  >   * 文件差异比较
+  >
+  >     > `git diff [FileName]`
+  >     >
+  >     > 将工作区的文件个暂存区进行比较；
+  >     >
+  >     > ---
+  >     >
+  >     > `git diff [本地库中历史版本] [FileName]`
+  >     >
+  >     > 将工作区中的文件和本地库历史记录比较
 
 * **分支管理**
+
+  在版本控制过程中，使用多条线同时推进多个任务；
+
+  同时并行推进多个功能开发，提高开发效率；
+
+  各个分支之间相互独立，如果一个分支开发失败不会影响到其他分支开发进度；
+
+  >* 创建分支
+  >
+  > `git branch [分支名]`
+  >
+  >* 查看分支
+  >
+  > `git branch -v`
+  >
+  >* 切换分支
+  >
+  > `git checkout [分支名]`
+  >
+  >* 合并分支
+  >
+  > 第一步：切换到接受修改的分支(被合并)上；
+  >
+  > `git checkout [被合并的分支名]`
+  >
+  > 第二步：执行merge命令；
+  >
+  > `git merge [有新内容的分支名]`
+  >
+  >* 解决冲突
+  >
+  >  ![image-20200616100537712](D:\Software\MarkDown\workspace\Git使用方法\attachment\pic\image-20200616100537712.png)
 
 
 

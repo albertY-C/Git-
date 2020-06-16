@@ -2,5 +2,8 @@ how to use GIT
 
 
 test by branch hot_fix
+this is master
+
+
 
 
