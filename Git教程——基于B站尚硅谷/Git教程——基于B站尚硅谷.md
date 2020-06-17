@@ -257,33 +257,33 @@
 
 ### 2.3 SSH免密登陆
 
-* 进入当前用户的家目录
-
-  `cd ~`
-
-* 删除.ssh目录
-
-  `rm -rvf .ssh`
-
-* 运行命令生成.ssh密钥目录
-
-  `ssh-keygen -t rsa -C [账号地址]`
-
-* 进入.ssh目录查看文件列表
-
-  `cd .ssh`
-
-  `ls -lF`
-
-* 查看id_rsa.pub文件内容
-
-  `cat id_rsa.pub`
-
-* 复制id_rsa.pub文件内容，登陆GitHub，点击用户头像——>Setting——>SSH and GPG keys
-
-* New SSH Key
-
-* 输入复制的密钥信息
+> * 进入当前用户的家目录
+>
+>   `cd ~`
+>
+> * 删除.ssh目录
+>
+>   `rm -rvf .ssh`
+>
+> * 运行命令生成.ssh密钥目录
+>
+>   `ssh-keygen -t rsa -C [账号地址]`
+>
+> * 进入.ssh目录查看文件列表
+>
+>   `cd .ssh`
+>
+>   `ls -lF`
+>
+> * 查看id_rsa.pub文件内容
+>
+>   `cat id_rsa.pub`
+>
+> * 复制id_rsa.pub文件内容，登陆GitHub，点击用户头像——>Setting——>SSH and GPG keys
+>
+> * New SSH Key
+>
+> * 输入复制的密钥信息
 
 
 
