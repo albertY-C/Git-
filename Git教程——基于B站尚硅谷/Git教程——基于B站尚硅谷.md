@@ -217,7 +217,7 @@
 >
 >   例如：`git clone https://github.com/albertY-C/Git-.git`
 >
->   注意CLONE的时候要区分本地库的地址，此时会完整地把远程库下载到本地库中，创建一个GitNotes远程地址的别名，初始化本地库；
+>   ​	注意CLONE的时候要区分本地库的地址，此时会完整地把远程库下载到本地库中，创建一个GitNotes远程地址的别名，初始化本地库；
 >
 > * 拉取
 >
@@ -226,8 +226,64 @@
 >   `git fetch [远程库地址别名] [远程分支名]`
 >
 >   `git merge [远程库地址别名/远程分支名]`
+>   
+> * 解决冲突
+>
+>   要点：
+>
+>   ​	如果不是基于GitHub远程库的最新版本所做的修改，不能推送，必须先拉取；
+>
+>   拉取下来后如果进入冲突状态，则按照“分支冲突解决”操作解决即可；
+>
+> * FORK(分支)分配出任务：[详细教程P41](https://www.bilibili.com/video/BV1pW411A7a5?p=41)
+>
+>   * 创建分支
+>
+>     邀请团队之外的人加入团队工程；
+>
+>     
+>
+>     ![image-20200617084518613](D:\Software\MarkDown\workspace\Git使用方法\attachment\pic\image-20200617084518613.png)
+>
+>   * CLONE
+>
+>     ​	将项目Clone到本地库，同时创建一个远程库并使之与本地库关联，此时的clone项目为原项目复制的版本，二者相互独立，如果Clone项目push到远程端不会影响到原项目；
+>
+>   * PULL REQUEST
+>
+>     ​	如果完成对应的项目，则需要将项目与原项目进行合并；
+>
+>   ![image-20200617085332707](D:\Software\MarkDown\workspace\Git使用方法\attachment\pic\image-20200617085332707.png)
 
+### 2.3 SSH免密登陆
 
+* 进入当前用户的家目录
+
+  `cd ~`
+
+* 删除.ssh目录
+
+  `rm -rvf .ssh`
+
+* 运行命令生成.ssh密钥目录
+
+  `ssh-keygen -t rsa -C [账号地址]`
+
+* 进入.ssh目录查看文件列表
+
+  `cd .ssh`
+
+  `ls -lF`
+
+* 查看id_rsa.pub文件内容
+
+  `cat id_rsa.pub`
+
+* 复制id_rsa.pub文件内容，登陆GitHub，点击用户头像——>Setting——>SSH and GPG keys
+
+* New SSH Key
+
+* 输入复制的密钥信息
 
 
 
